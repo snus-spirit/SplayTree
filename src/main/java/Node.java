@@ -21,10 +21,10 @@ public class Node {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(" key = ").append(this.key);
-        if (this.parent != null) sb.append(" parent ").append(this.parent.key);
-        if (this.left != null) sb.append(" left ").append(this.left.key);
-        if (this.right != null) sb.append(" right ").append(this.right.key);
+        sb.append("key ").append(this.key);
+        sb.append(this.parent != null ? " parent " + this.parent.key : " parent null");
+        sb.append(this.left != null ? " left " + this.left.key : " left null");
+        sb.append(this.right != null ? " right " + this.right.key : " right null");
         return sb.toString();
     }
 
