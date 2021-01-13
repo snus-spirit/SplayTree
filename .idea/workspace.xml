@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4e04b152-390f-4f2e-917a-770ec8358ddc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SplayTree.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Node.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,26 +30,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1k1AmzWkIZGxAngG0QkLXeLNUj1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Algorithms-2020" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RunManager" selected="JUnit.MainTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -64,16 +61,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SplayTree" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="insert" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MainTest.remove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SplayTree" />
       <option name="PACKAGE_NAME" value="" />
@@ -84,11 +71,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.zipZip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainTest.setMethods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SplayTree" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="zipZip" />
+      <option name="METHOD_NAME" value="setMethods" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.zigZag" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SplayTree" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="zigZag" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -98,9 +95,9 @@
       <list>
         <item itemvalue="JUnit.MainTest" />
         <item itemvalue="JUnit.MainTest.remove" />
+        <item itemvalue="JUnit.MainTest.setMethods" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.MainTest.insert" />
-        <item itemvalue="JUnit.MainTest.zipZip" />
+        <item itemvalue="JUnit.MainTest.zigZag" />
       </list>
     </recent_temporary>
   </component>
@@ -116,6 +113,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -129,54 +127,16 @@
     </task>
     <servers />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="275" y="42" key="#Project_Structure" timestamp="1606906434888">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="275" y="42" key="#Project_Structure/0.0.1366.768@0.0.1366.768" timestamp="1606906434888" />
-    <state x="137" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607518097235">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="137" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1607518097235" />
-    <state x="463" y="138" key="FileChooserDialogImpl" timestamp="1607000318793">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="463" y="138" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1607000318793" />
-    <state x="562" y="277" width="260" height="214" key="Github.ShareDialog" timestamp="1605093931346">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="562" y="277" width="260" height="214" key="Github.ShareDialog/0.0.1366.768@0.0.1366.768" timestamp="1605093931346" />
-    <state width="1323" height="188" key="GridCell.Tab.0.bottom" timestamp="1607518192263">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1323" height="188" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1607518192263" />
-    <state width="1323" height="188" key="GridCell.Tab.0.center" timestamp="1607518192263">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1323" height="188" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1607518192263" />
-    <state width="1323" height="188" key="GridCell.Tab.0.left" timestamp="1607518192262">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1323" height="188" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1607518192262" />
-    <state width="1323" height="188" key="GridCell.Tab.0.right" timestamp="1607518192263">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1323" height="188" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1607518192263" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1607518155287">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1607518155286" />
-    <state x="492" y="300" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607518198621">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="492" y="300" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768@0.0.1366.768" timestamp="1607518198621" />
-    <state x="339" y="172" key="run.anything.popup" timestamp="1605093659375">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1605093659375" />
-    <state x="513" y="174" key="svn.repositoryBrowser" timestamp="1605094072254">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="513" y="174" key="svn.repositoryBrowser/0.0.1366.768@0.0.1366.768" timestamp="1605094072254" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

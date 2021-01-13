@@ -1,6 +1,13 @@
-public class Tree {
-    //использовать деерво как реализацию set\map
-    public Node root;
+import java.util.*;
+
+public class Tree implements Set {
+
+    private Node root;
+    private int size = 0;
+
+    public Node getRoot(){
+        return  this.root;
+    }
 
     public Node find(int key) {
         if (root == null) throw new IllegalArgumentException();
@@ -18,10 +25,12 @@ public class Tree {
                 :findNodeR(node.right, key);
     }
 
+
     public void insert(int key) {
         Node node = new Node(key);
         if (root == null) {
             root = node;
+            size++;
             return;
         }
         Node parent = insertR(root, key);
@@ -31,6 +40,7 @@ public class Tree {
             parent.right = node;
         node.parent = parent;
         splay(node);
+        size++;
     }
 
     private Node insertR(Node node, int key) {
@@ -43,7 +53,7 @@ public class Tree {
                 :insertR(node.right, key);
     }
 
-    public void leftChildToParent(Node node, Node parent){
+    private void leftChildToParent(Node node, Node parent){
         if (parent.parent != null) {
             if (parent == parent.parent.left)
                 parent.parent.left = node;
@@ -58,7 +68,7 @@ public class Tree {
         node.right = parent;
     }
 
-    public void rightChildToParent(Node node, Node parent){
+    private void rightChildToParent(Node node, Node parent){
         if (parent.parent != null) {
             if (parent == parent.parent.left)
                 parent.parent.left = node;
@@ -73,11 +83,10 @@ public class Tree {
         node.left = parent;
     }
 
-    public void splay(Node node) {
+    private void splay(Node node) {
         while (node.parent != null) {
             Node parent = node.parent;
             Node grandParent = node.parent.parent;
-
             if (grandParent == null) { // zig
                 if (node == parent.left)
                     leftChildToParent(node, parent);
@@ -133,10 +142,11 @@ public class Tree {
         node.left = null;
         node.right = null;
         merge(left, right);
+        size--;
     }
 
 
-    public Node findWOSplay(int key) {
+    protected Node findWOSplay(int key) {
         if (root == null) throw new IllegalArgumentException();
         return findNodeRWO(root, key);
     }
@@ -151,7 +161,7 @@ public class Tree {
                 :findNodeRWO(node.right, key);
     }
 
-    public void insertWOSplay(int key) {
+    protected void insertWOSplay(int key) {
         Node node = new Node(key);
         if (root == null) {
             root = node;
@@ -173,5 +183,161 @@ public class Tree {
         return key < node.key
                 ?insertRWO(node.left, key)
                 :insertRWO(node.right, key);
+    }
+
+    @Override
+    public int size() {
+        return this.size;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    @Override
+    public boolean contains(Object o) {
+        return Arrays.asList(this.toArray()).contains(o);
+    }
+
+    @Override
+    public Iterator iterator() {
+        return new SplayTreeIterator();
+    }
+
+    private class SplayTreeIterator implements Iterator<Integer> {
+        private Node next;
+
+        SplayTreeIterator(){
+            next = root;
+            if(next == null) return;
+            while (next.left != null)
+                next = next.left;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return next != null;
+        }
+
+        @Override
+        public Integer next() {
+            if (!hasNext()) throw new NoSuchElementException();
+            Node cur = next;
+
+            if (next.right != null) {
+                next = next.right;
+                while (next.left != null)
+                    next = next.left;
+                return cur.key;
+            }
+
+            while (true) {
+                if(next.parent == null) {
+                    next = null;
+                    return cur.key;
+                }
+                if(next.parent.left == next) {
+                    next = next.parent;
+                    return cur.key;
+                }
+                next = next.parent;
+            }
+        }
+    }
+
+    @Override
+    public Object[] toArray() {
+        Iterator iter = this.iterator();
+        Object[] arr = new Object[this.size];
+        for (int i = 0; i < this.size; i++)
+            arr[i] = iter.next();
+        return arr;
+    }
+
+    @Override
+    public boolean add(Object o) {
+        this.insert((int) o);
+        return true;
+    }
+
+    @Override
+    public boolean remove(Object o) {
+        this.remove(this.find((int) o));
+        return true;
+    }
+
+    @Override
+    public boolean addAll(Collection c) {
+        for (Object o : c) {
+            this.insert((int) o);
+        }
+        return true;
+    }
+
+    @Override
+    public void clear() {
+        size = 0;
+        root = null;
+    }
+
+
+    @Override
+    public boolean removeAll(Collection c) {
+        for (Object o : c) {
+            this.remove((int) o);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean retainAll(Collection c) {
+        Iterator iter = this.iterator();
+        while (iter.hasNext()) {
+            Object a = iter.next();
+            if (!c.contains(a)) {
+                this.remove(a);
+                iter = this.iterator();
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean containsAll(Collection c) {
+        for (Object o : c) {
+            if (!this.contains(o))
+                return false;
+        }
+        return true;
+    }
+
+    @Override
+    public Object[] toArray(Object[] a) {
+        if (a.length < this.size)
+            return this.toArray();
+
+        Iterator iter = this.iterator();
+        int i = 0;
+        while (iter.hasNext()) {
+            a[i] = iter.next();
+            i++;
+        }
+        if (i != a.length)
+            a[i] = 0;
+        return a;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+        if(obj == null || obj.getClass() != this.getClass()) return false;
+        Tree tree = (Tree) obj;
+        return Arrays.equals(tree.toArray(), this.toArray());
+    }
+
+    @Override
+    public int hashCode() {
+        return root.key * size;
     }
 }

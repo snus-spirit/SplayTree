@@ -1,16 +1,16 @@
+import java.util.*;
+
 public class Main {
 
     public static void main(String[] args) {
         Tree tree = new Tree();
-        tree.insertWOSplay(21);
-        tree.insertWOSplay(7);
-        tree.insertWOSplay(32);
-        tree.insertWOSplay(5);
-        tree.insertWOSplay(14);
-        tree.insertWOSplay(27);
-        tree.insertWOSplay(37);
-        tree.insertWOSplay(25);
-       //System.out.println(tree.find(37));
-        tree.remove(new  Node(100));
+        tree.insert(21);
+        tree.insert(7);
+        tree.insert(32);
+        tree.insert(5);
+        tree.insert(14);
+        tree.insert(27);
+        tree.insert(37);
+        tree.insert(25);
     }
 }
